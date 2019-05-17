@@ -1,8 +1,6 @@
 const request = require("supertest");
 const server = require("./server.js");
 
-const db = require("../data/dbConfig.js");
-
 describe("SERVER", () => {
   describe("GET /", () => {
     it("should return status code 200", async () => {
@@ -35,13 +33,17 @@ describe("SERVER", () => {
   });
 
   describe("POST /games", () => {
+    it("should return JSON data", async () => {
+      const res = await request(server).get("/");
+      expect(res.type).toBe("application/json");
+    });
     it("should return status code 201 if game data correct", async () => {
       const testGame = {
         title: "Halo",
         genre: "Shooter",
         releaseYear: 2003
       };
-      let res = await request(server)
+      const res = await request(server)
         .post("/games")
         .send(testGame);
       expect(res.status).toBe(201);
@@ -51,7 +53,7 @@ describe("SERVER", () => {
         genre: "Shooter",
         releaseYear: 2003
       };
-      let res = await request(server)
+      const res = await request(server)
         .post("/games")
         .send(testGame);
       expect(res.status).toBe(422);

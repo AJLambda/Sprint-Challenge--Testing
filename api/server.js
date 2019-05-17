@@ -21,7 +21,7 @@ server.post("/games", async (req, res) => {
   try {
     if (req.body.genre && req.body.title) {
       const game = await db.insert(req.body);
-      res.status(200).json(game);
+      res.status(201).json(game);
     } else {
       res.status(422).json({
         message: "missing title and genre to create game"

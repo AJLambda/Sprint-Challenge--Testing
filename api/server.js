@@ -1,7 +1,6 @@
 const express = require("express");
 
 const games = require("../games/gamesModel.js");
-const db = require("../data/dbConfig");
 
 const server = express();
 
@@ -20,7 +19,7 @@ server.get("/games", async (req, res) => {
 server.post("/games", async (req, res) => {
   try {
     if (req.body.genre && req.body.title) {
-      const game = await db.insert(req.body);
+      const game = await games.insert(req.body);
       res.status(201).json(game);
     } else if (!req.body.genre) {
       res.status(422).json({

@@ -18,7 +18,7 @@ server.get("/games", async (req, res) => {
 
 server.post("/games", async (req, res) => {
   try {
-    if (req.body.genre && req.body.title) {
+    if (req.body && req.body.genre && req.body.title) {
       const game = await games.insert(req.body);
       res.status(201).json(game);
     } else if (!req.body.genre) {

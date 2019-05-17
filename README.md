@@ -50,8 +50,6 @@ the fact that we are only getting and posting
 
 #Is there anything that you could not complete on today's Sprint?
 
-getting the correct status code for a posted object is giving me some issues
-
 #Are there any concepts that you find that you don't understand that was taught from the week?
 
 the test DB/ testing environments / what postgres with heroku actually does

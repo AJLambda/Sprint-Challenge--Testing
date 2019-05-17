@@ -39,9 +39,9 @@ describe("SERVER", () => {
     });
     it("should return status code 201 if game data correct", async () => {
       const testGame = {
-        title: "Halo",
-        genre: "Shooter",
-        releaseYear: 2003
+        title: "Pacman",
+        genre: "Arcade",
+        releaseYear: 1980
       };
       const res = await request(server)
         .post("/games")
@@ -50,8 +50,8 @@ describe("SERVER", () => {
     });
     it("should return status code 422 if game data incorrect", async () => {
       const testGame = {
-        genre: "Shooter",
-        releaseYear: 2003
+        genre: "Arcade",
+        releaseYear: 1980
       };
       const res = await request(server)
         .post("/games")

@@ -1,7 +1,11 @@
 const request = require("supertest");
 const server = require("./server.js");
+const db = require("../data/dbConfig.js");
 
 describe("SERVER", () => {
+  beforeEach(() => {
+    return db("games").truncate(); //cleanup
+  });
   describe("GET /", () => {
     it("should return status code 200", async () => {
       const res = await request(server).get("/");
@@ -13,6 +17,7 @@ describe("SERVER", () => {
     });
     it("should be functional", async () => {
       const res = await request(server).get("/");
+      console.log("RES BODY", res.body === { api: "up" });
       expect(res.body).toEqual({ api: "up" });
     });
   });

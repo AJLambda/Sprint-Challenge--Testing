@@ -2,21 +2,22 @@ const Games = require("./gamesModel.js");
 const db = require("../data/dbConfig.js");
 
 describe("The Games Model", () => {
-  afterEach(async () => {
+  beforeEach(async () => {
     await db("games").truncate();
   });
 
   describe("insert() helper", () => {
     it("should insert provided game", async () => {
-      await Games.insert({
-        title: "Pacman",
-        genre: "Arcade",
-        releaseYear: 1980
+      const newGame = await Games.insert({
+        // change to check by ID
+        title: "Fortnight",
+        genre: "Lame",
+        releaseYear: 1969
       });
 
       const gameList = await db("games");
 
-      expect(gameList).toHaveLength(1);
+      expect(gameList[0]).toEqual(newGame);
     });
   });
   describe("getAll() helper", () => {

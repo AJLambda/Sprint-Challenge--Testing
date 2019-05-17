@@ -32,7 +32,7 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
    Test driven development a process where tests are built first to ensure the code is working as purposed. TDD is intended to help us plan and think out how our code should behave in a more precise manner, it should result in better quality code. TDD also should help errors that may occur in the future and regressions to former state.
 
-   I think that it may be somewhat of a burden for smaller projects and it interfere with time constraints. However, I do see the benefit in some use cases, it seems to be especially effective when code is used over a long period.
+   I think that it may be somewhat of a burden for smaller projects and it may interfere with time constraints. However, I do see the benefit in some use cases, it seems to be especially effective when code is used over a long period.
 
 1) Mention three types of automated tests.
 
@@ -40,27 +40,43 @@ Demonstrate your understanding of this week's concepts by answering the followin
    Integration Tests - testing multiple units of code together
    E2E - testing the application as a whole. Expensive and slow, not always used.
 
+#What do you find difficult about the Sprint?
+
+running yarn test giving me errors
+
+#What did you find easy about the Sprint?
+
+the fact that we are only getting and posting
+
+#Is there anything that you could not complete on today's Sprint?
+
+getting the correct status code for a posted object is giving me some issues
+
+#Are there any concepts that you find that you don't understand that was taught from the week?
+
+the test DB/ testing environments / what postgres with heroku actually does
+
 ## Project Set Up
 
-- [ ] Fork and clone this repository.
-- [ ] **CD into the folder** where you downloaded the repository.
-- [ ] Run `yarn` or `npm i` to download all dependencies.
-- [ ] Type `yarn test` or `npm test` to run the tests. The `test` script is already configured.
+- [x] Fork and clone this repository.
+- [x] **CD into the folder** where you downloaded the repository.
+- [x] Run `yarn` or `npm i` to download all dependencies.
+- [x] Type `yarn test` or `npm test` to run the tests. The `test` script is already configured.
 
 ## Minimum Viable Product
 
 Your finished project must include all of the following requirements:
 
-- [ ] Use `jest` and `supertest` to write the tests.
-- [ ] Write the **tests BEFORE** writing the route handlers.
-- [ ] Your API must have both `POST` and `GET` endpoints for `/games`.
-- [ ] Write a **minimum** of three tests per endpoint.
+- [x] Use `jest` and `supertest` to write the tests.
+- [x] Write the **tests BEFORE** writing the route handlers.
+- [x] Your API must have both `POST` and `GET` endpoints for `/games`.
+- [x] Write a **minimum** of three tests per endpoint.
 
 Below is a product specification covering the requirements for your endpoints.
 
 ### POST /games
 
-- [ ] The `POST /games` endpoint should take in an object that looks like this
+- [x] The `POST /games` endpoint should take in an object that looks like this
 
   ```js
   {
@@ -70,13 +86,13 @@ Below is a product specification covering the requirements for your endpoints.
   }
   ```
 
-- [ ] In the route handler, validate that the required fields are included inside the body. If the information is incomplete, return a `422` status code.
-- [ ] Write tests to verify that the endpoint returns the correct HTTP status code when receiving correct and incorrect game data.
+- [x] In the route handler, validate that the required fields are included inside the body. If the information is incomplete, return a `422` status code.
+- [x] Write tests to verify that the endpoint returns the correct HTTP status code when receiving correct and incorrect game data.
 
 ### GET /games
 
-- [ ] The `GET /games` endpoint should return the list of games and HTTP status code 200.
-- [ ] Write a test to make sure this endpoint always returns an array, even if there are no games stored. If there are no games to return, the endpoint should return an empty array.
+- [x] The `GET /games` endpoint should return the list of games and HTTP status code 200.
+- [x] Write a test to make sure this endpoint always returns an array, even if there are no games stored. If there are no games to return, the endpoint should return an empty array.
 
 ## Stretch Problems
 
